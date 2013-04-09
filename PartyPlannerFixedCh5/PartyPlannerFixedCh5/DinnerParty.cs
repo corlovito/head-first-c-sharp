@@ -8,6 +8,7 @@ namespace PartyPlannerFixedCh5
 {
     class DinnerParty
     {
+        // Fields
         private decimal costOfBeveragesPerPerson;
         public decimal CostOfFoodPerPerson = 25;
         public decimal CostOfDecorations = 0;
