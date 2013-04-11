@@ -8,10 +8,11 @@ namespace PartyPlannerFixedCh5
 {
     class DinnerParty
     {
+        const int CostOfFoodPerPerson = 25;
+
         // Fields
         private decimal costOfBeveragesPerPerson;
-        public decimal CostOfFoodPerPerson = 25;
-        public decimal CostOfDecorations = 0;
+        private decimal CostOfDecorations = 0;
 
         // Backing fields
         private int numberOfPeople;
@@ -28,10 +29,7 @@ namespace PartyPlannerFixedCh5
 
         public int NumberOfPeople 
         {
-            get
-            {
-                return numberOfPeople;
-            }
+            get { return numberOfPeople; }
             set
             {
                 numberOfPeople = value;
@@ -41,10 +39,7 @@ namespace PartyPlannerFixedCh5
 
         public bool FancyDecorations
         {
-            get
-            {
-                return fancyDecorations;
-            }
+            get { return fancyDecorations; }
             set
             {
                 fancyDecorations = value;
