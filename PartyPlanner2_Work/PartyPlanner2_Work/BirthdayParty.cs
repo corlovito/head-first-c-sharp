@@ -8,9 +8,11 @@ namespace PartyPlanner2_Work
 {
     class BirthdayParty
     {
-        public BirthdayParty(string cakeWriting)
+        public BirthdayParty(string cakeWriting, bool fancy, int numberOfPeople)
         {
             this.CakeWriting = cakeWriting;
+            this.FancyDecorations = fancy;
+            this.NumberOfPeople = numberOfPeople;
         }
 
         const int costOfFoodPerPerson = 25;

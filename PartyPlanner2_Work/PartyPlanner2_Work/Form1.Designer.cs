@@ -173,6 +173,8 @@
             this.textBoxCakeWriting.Name = "textBoxCakeWriting";
             this.textBoxCakeWriting.Size = new System.Drawing.Size(106, 20);
             this.textBoxCakeWriting.TabIndex = 19;
+            this.textBoxCakeWriting.TextChanged += new System.EventHandler(this.textBoxCakeWriting_TextChanged);
+  //          this.textBoxCakeWriting.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxCakeWriting_KeyDown);
             // 
             // label4
             // 

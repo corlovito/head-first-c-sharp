@@ -19,7 +19,7 @@ namespace PartyPlanner2_Work
         {
             InitializeComponent();
             dinnerParty = new DinnerParty(checkBoxDinnerHealthy.Checked, checkBoxDinnerFancy.Checked, (int)numericUpDownDinner.Value);
-            birthdayParty = new BirthdayParty(textBoxCakeWriting.Text);
+            birthdayParty = new BirthdayParty(textBoxCakeWriting.Text, checkBoxBirthdayFancy.Checked, (int)numericUpDownBirthday.Value);
             DisplayDinnerPartyCost();
             DisplayBirthdayPartyCost();
         }
@@ -34,18 +34,29 @@ namespace PartyPlanner2_Work
 
         private void checkBoxBirthdayFancy_CheckedChanged(object sender, EventArgs e)
         {
+            recalculateBirthdayEverything();
+            DisplayBirthdayPartyCost();
+        }
+
+        private void textBoxCakeWriting_TextChanged(object sender, EventArgs e)
+        {
+            recalculateBirthdayEverything();
             DisplayBirthdayPartyCost();
         }
 
         private void recalculateBirthdayEverything()
         {
-            
+            birthdayParty.NumberOfPeople = (int)numericUpDownBirthday.Value;
+            birthdayParty.CakeWriting = textBoxCakeWriting.Text;
+            textBoxCakeWriting.Text = birthdayParty.CakeWriting; // copies valid text back to textbox in case user goes over limit
+            birthdayParty.FancyDecorations = checkBoxBirthdayFancy.Checked;
         }
 
         private void DisplayBirthdayPartyCost()
         {
             labelBirthdayCost.Text = (birthdayParty.CalculateCost()).ToString("c");
         }
+
 
 
         #endregion
@@ -84,6 +95,8 @@ namespace PartyPlanner2_Work
         }
 
         #endregion
+
+
 
  
 
