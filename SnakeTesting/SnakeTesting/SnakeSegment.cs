@@ -31,21 +31,44 @@ namespace SnakeTesting
         int leaderX;
         int leaderY;
 
-        //bool followerExists;    // TODO: Do I even need to know the follower?
-        //int followerX;
-        //int followerY;
-
-        private void move()
+        public void Move(Snake.Movements direction)
         {
             if (leaderExists)
             {
                 x = leaderX;
                 y = leaderY;
+                //System.Windows.Forms.MessageBox.Show("follower " + x + ", " + y);
             }
             else // This segment is the head, go where user instructed
             {
-
+                switch (direction)
+                {
+                    // TODO: boundary checks
+                    case Snake.Movements.up:
+                        y -= 1;
+                        break;
+                    case Snake.Movements.down:
+                        y += 1;
+                        break;
+                    case Snake.Movements.left:
+                        x -= 1;
+                        break;
+                    case Snake.Movements.right:
+                        x += 1;
+                        break;
+                    case Snake.Movements.same:
+                        break;
+                    default:
+                        break;
+                }
+                //System.Windows.Forms.MessageBox.Show("leader " + x + ", " + y);
             }
         }
+
+        public void AnnounceLocation()
+        {
+            System.Windows.Forms.MessageBox.Show("x = " + x + "\ny =" + y);
+        }
+
     }
 }

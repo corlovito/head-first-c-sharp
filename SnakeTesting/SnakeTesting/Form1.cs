@@ -18,6 +18,13 @@ namespace SnakeTesting
         {
             InitializeComponent();
             freddie = new Snake();
+                        
+        }
+
+        private void buttonMoveRight_Click(object sender, EventArgs e)
+        {
+            Snake.Movements direction = Snake.Movements.right;
+            freddie.Slither(direction);
         }
 
 
