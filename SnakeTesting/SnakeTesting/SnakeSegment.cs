@@ -24,14 +24,16 @@ namespace SnakeTesting
             }
         }
 
-        int x;
-        int y;
+        public int x { get; set; }
+        public int y { get; set; }
 
         bool leaderExists;  // Segment uses Leader location to know where to move next
         int leaderX;
         int leaderY;
 
-        public void Move(Snake.Movements direction)
+        public Utility.Movements Direction { get; set; }
+
+        public void Move(Utility.Movements direction)
         {
             if (leaderExists)
             {
@@ -44,19 +46,19 @@ namespace SnakeTesting
                 switch (direction)
                 {
                     // TODO: boundary checks
-                    case Snake.Movements.up:
+                    case Utility.Movements.up:
                         y -= 1;
                         break;
-                    case Snake.Movements.down:
+                    case Utility.Movements.down:
                         y += 1;
                         break;
-                    case Snake.Movements.left:
+                    case Utility.Movements.left:
                         x -= 1;
                         break;
-                    case Snake.Movements.right:
+                    case Utility.Movements.right:
                         x += 1;
                         break;
-                    case Snake.Movements.same:
+                    case Utility.Movements.same:
                         break;
                     default:
                         break;

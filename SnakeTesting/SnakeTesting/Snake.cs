@@ -8,36 +8,38 @@ namespace SnakeTesting
 {
     class Snake
     {
-        public enum Movements { up, down, left, right, same };
-        private Movements direction;
-
         List<SnakeSegment> segments;
+
+        public Utility.Movements UserGivenDirection { set; private get; }
 
         public Snake()
         {
-            direction = Movements.right;
+            UserGivenDirection = Utility.Movements.right;
             segments = new List<SnakeSegment>();
             segments.Add(new SnakeSegment(0, 2, false)); // snake head
             segments.Add(new SnakeSegment(0, 1, true, 0, 2));
             segments.Add(new SnakeSegment(0, 0, true, 0, 1)); // snake butt
         }
 
-        public void Slither(Movements direction = Movements.same)
+        public void Slither(Utility.Movements direction = Utility.Movements.same)
         {
             foreach (SnakeSegment seg in segments)
             {
                 //seg.AnnounceLocation();
-                if (direction == Movements.same)
-                    direction = this.direction; // use previous direction
+                if (direction == Utility.Movements.same)
+                    direction = this.UserGivenDirection; // use previous direction
 
-                this.direction = direction; // store new direction
+                this.UserGivenDirection = direction; // store new direction
                 seg.Move(direction);
             }
         }
 
         public void AddSegment()
         {
-
+            int numSegments = segments.Count;
+            // add segment to list
+            // give it same location as butt
+            // don't move it on next slither
         }
 
         

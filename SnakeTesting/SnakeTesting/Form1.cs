@@ -23,7 +23,7 @@ namespace SnakeTesting
 
         private void buttonMoveRight_Click(object sender, EventArgs e)
         {
-            Snake.Movements direction = Snake.Movements.right;
+            Utility.Movements direction = Utility.Movements.right;
             freddie.Slither(direction);
         }
 
