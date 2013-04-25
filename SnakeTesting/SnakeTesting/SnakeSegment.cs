@@ -12,7 +12,9 @@ namespace SnakeTesting
 
     class SnakeSegment
     {
-        public SnakeSegment(int x, int y, bool leaderExists = false, int leaderX = 0, int leaderY = 0)
+        // TODO: I don't need to keep track of leaderExists and the leaderX and leaderY. It's a list, so it will be easy to see what's in front of it.
+        // I don't know. I just need to rework this whole thing
+        public SnakeSegment(int x, int y, bool leaderExists = true, int leaderX = 0, int leaderY = 0)
         {
             this.x = x;
             this.y = y;
@@ -39,7 +41,7 @@ namespace SnakeTesting
             {
                 x = leaderX;
                 y = leaderY;
-                //System.Windows.Forms.MessageBox.Show("follower " + x + ", " + y);
+                System.Windows.Forms.MessageBox.Show("follower " + x + ", " + y);
             }
             else // This segment is the head, go where user instructed
             {
@@ -63,7 +65,7 @@ namespace SnakeTesting
                     default:
                         break;
                 }
-                //System.Windows.Forms.MessageBox.Show("leader " + x + ", " + y);
+                System.Windows.Forms.MessageBox.Show("leader " + x + ", " + y);
             }
         }
 

@@ -27,6 +27,11 @@ namespace SnakeTesting
             freddie.Slither(direction);
         }
 
+        private void buttonAddSegment_Click(object sender, EventArgs e)
+        {
+            freddie.AddSegment();
+        }
+
 
     }
 }

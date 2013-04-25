@@ -37,9 +37,15 @@ namespace SnakeTesting
         public void AddSegment()
         {
             int numSegments = segments.Count;
+            int leaderX = segments[numSegments - 1].x;
+            int leaderY = segments[numSegments - 1].y;
+
             // add segment to list
             // give it same location as butt
+            segments.Add(new SnakeSegment(leaderX, leaderY, true, leaderX, leaderY));
             // don't move it on next slither
+            // TODO
+            System.Windows.Forms.MessageBox.Show(segments.Count.ToString());
         }
 
         

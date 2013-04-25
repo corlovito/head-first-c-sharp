@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonMoveRight = new System.Windows.Forms.Button();
+            this.buttonAddSegment = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonMoveRight
@@ -41,11 +42,22 @@
             this.buttonMoveRight.UseVisualStyleBackColor = true;
             this.buttonMoveRight.Click += new System.EventHandler(this.buttonMoveRight_Click);
             // 
+            // buttonAddSegment
+            // 
+            this.buttonAddSegment.Location = new System.Drawing.Point(44, 78);
+            this.buttonAddSegment.Name = "buttonAddSegment";
+            this.buttonAddSegment.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddSegment.TabIndex = 1;
+            this.buttonAddSegment.Text = "Add Segment";
+            this.buttonAddSegment.UseVisualStyleBackColor = true;
+            this.buttonAddSegment.Click += new System.EventHandler(this.buttonAddSegment_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.buttonAddSegment);
             this.Controls.Add(this.buttonMoveRight);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -56,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttonMoveRight;
+        private System.Windows.Forms.Button buttonAddSegment;
     }
 }
 
