@@ -13,17 +13,19 @@ namespace SnakeTesting
     class SnakeSegment
     {
 
-        public SnakeSegment(int x, int y, bool isHead = false)
+        public SnakeSegment(int x, int y, bool isHead = false, bool isNew = true)
         {
             this.X = x;
             this.Y = y;
             this.IsHead = isHead;
+            this.IsNew = isNew;
         }
 
         public int X { get; set; }
         public int Y { get; set; }
 
         public bool IsHead { get; set; }
+        public bool IsNew { get; set; }
 
         public Utility.Movements Direction { get; set; }
 
@@ -63,7 +65,7 @@ namespace SnakeTesting
 
         public void AnnounceLocation()
         {
-            System.Windows.Forms.MessageBox.Show("x = " + X + "\ny =" + Y);
+            System.Windows.Forms.MessageBox.Show("x = " + X + "\ny =" + Y + "\nIsHead: " + IsHead.ToString());
         }
 
     }
