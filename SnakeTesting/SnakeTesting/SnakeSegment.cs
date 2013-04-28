@@ -12,66 +12,58 @@ namespace SnakeTesting
 
     class SnakeSegment
     {
-        // TODO: I don't need to keep track of leaderExists and the leaderX and leaderY. It's a list, so it will be easy to see what's in front of it.
-        // I don't know. I just need to rework this whole thing
-        public SnakeSegment(int x, int y, bool leaderExists = true, int leaderX = 0, int leaderY = 0)
+
+        public SnakeSegment(int x, int y, bool isHead = false)
         {
-            this.x = x;
-            this.y = y;
-            if (leaderExists)
-            {
-                this.leaderExists = leaderExists;
-                this.leaderX = leaderX;
-                this.leaderY = leaderY;
-            }
+            this.X = x;
+            this.Y = y;
+            this.IsHead = isHead;
         }
 
-        public int x { get; set; }
-        public int y { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
 
-        bool leaderExists;  // Segment uses Leader location to know where to move next
-        int leaderX;
-        int leaderY;
+        public bool IsHead { get; set; }
 
         public Utility.Movements Direction { get; set; }
 
-        public void Move(Utility.Movements direction)
-        {
-            if (leaderExists)
-            {
-                x = leaderX;
-                y = leaderY;
-                System.Windows.Forms.MessageBox.Show("follower " + x + ", " + y);
-            }
-            else // This segment is the head, go where user instructed
-            {
-                switch (direction)
-                {
-                    // TODO: boundary checks
-                    case Utility.Movements.up:
-                        y -= 1;
-                        break;
-                    case Utility.Movements.down:
-                        y += 1;
-                        break;
-                    case Utility.Movements.left:
-                        x -= 1;
-                        break;
-                    case Utility.Movements.right:
-                        x += 1;
-                        break;
-                    case Utility.Movements.same:
-                        break;
-                    default:
-                        break;
-                }
-                System.Windows.Forms.MessageBox.Show("leader " + x + ", " + y);
-            }
-        }
+        //public void Move(Utility.Movements direction)
+        //{
+        //    if (leaderExists)
+        //    {
+        //        x = leaderX;
+        //        y = leaderY;
+        //        System.Windows.Forms.MessageBox.Show("follower " + x + ", " + y);
+        //    }
+        //    else // This segment is the head, go where user instructed
+        //    {
+        //        switch (direction)
+        //        {
+        //            // TODO: boundary checks
+        //            case Utility.Movements.up:
+        //                y -= 1;
+        //                break;
+        //            case Utility.Movements.down:
+        //                y += 1;
+        //                break;
+        //            case Utility.Movements.left:
+        //                x -= 1;
+        //                break;
+        //            case Utility.Movements.right:
+        //                x += 1;
+        //                break;
+        //            case Utility.Movements.same:
+        //                break;
+        //            default:
+        //                break;
+        //        }
+        //        System.Windows.Forms.MessageBox.Show("leader " + x + ", " + y);
+        //    }
+        //}
 
         public void AnnounceLocation()
         {
-            System.Windows.Forms.MessageBox.Show("x = " + x + "\ny =" + y);
+            System.Windows.Forms.MessageBox.Show("x = " + X + "\ny =" + Y);
         }
 
     }

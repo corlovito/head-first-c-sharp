@@ -16,33 +16,47 @@ namespace SnakeTesting
         {
             UserGivenDirection = Utility.Movements.right;
             segments = new List<SnakeSegment>();
-            segments.Add(new SnakeSegment(0, 2, false)); // snake head
-            segments.Add(new SnakeSegment(0, 1, true, 0, 2));
-            segments.Add(new SnakeSegment(0, 0, true, 0, 1)); // snake butt
+            segments.Add(new SnakeSegment(0, 2, true)); // snake head
+            segments.Add(new SnakeSegment(0, 1));
+            segments.Add(new SnakeSegment(0, 0));
         }
-
+        
         public void Slither(Utility.Movements direction = Utility.Movements.same)
         {
-            foreach (SnakeSegment seg in segments)
+            int snakeLength = segments.Count;
+            for (int i = snakeLength - 1; i >= 0; i--) // start at tail
             {
-                //seg.AnnounceLocation();
-                if (direction == Utility.Movements.same)
-                    direction = this.UserGivenDirection; // use previous direction
+                if (segments[i].IsHead)
+                {
+                    //seg.AnnounceLocation();
+                    if (direction == Utility.Movements.same)
+                        direction = this.UserGivenDirection; // use previous direction
 
-                this.UserGivenDirection = direction; // store new direction
-                seg.Move(direction);
+                    this.UserGivenDirection = direction; // store new direction
+
+                    // do move
+
+                }
+                else // not head
+                { // move to same spot as leading segment 
+                    segments[i].X = segments[i - 1].X;
+                    segments[i].Y = segments[i - 1].Y;
+                }
+                    
+
+
             }
         }
 
         public void AddSegment()
         {
             int numSegments = segments.Count;
-            int leaderX = segments[numSegments - 1].x;
-            int leaderY = segments[numSegments - 1].y;
+            int leaderX = segments[numSegments - 1].X;
+            int leaderY = segments[numSegments - 1].Y;
 
             // add segment to list
             // give it same location as butt
-            segments.Add(new SnakeSegment(leaderX, leaderY, true, leaderX, leaderY));
+            segments.Add(new SnakeSegment(leaderX, leaderY));
             // don't move it on next slither
             // TODO
             System.Windows.Forms.MessageBox.Show(segments.Count.ToString());
