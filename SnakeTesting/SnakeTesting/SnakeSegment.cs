@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace SnakeTesting
 {
-    // A segment of the snake. The snake is made up of multiple segments. There is a head and butt segment.
-    // All segments between the head and butt have a Leader and Follower. The head only has a Follower. The
-    // butt only has a Leader.
+    // A segment of the snake. The snake is a list of segments.
 
     class SnakeSegment
     {
