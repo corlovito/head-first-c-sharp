@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SnakeTesting
 {
-    class Utility
+    static class Utility
     {
         public enum Movements
         {
