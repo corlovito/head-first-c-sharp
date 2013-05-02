@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch6VirtualOverrideExample", "Ch6VirtualOverrideExample\Ch6VirtualOverrideExample.csproj", "{11F7B662-003B-42A1-823E-4B5D0F547123}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11F7B662-003B-42A1-823E-4B5D0F547123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F7B662-003B-42A1-823E-4B5D0F547123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F7B662-003B-42A1-823E-4B5D0F547123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F7B662-003B-42A1-823E-4B5D0F547123}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
