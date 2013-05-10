@@ -16,7 +16,7 @@ namespace SnakeTesting
             this.X = x;
             this.Y = y;
             this.IsHead = isHead;
-            this.IsNew = isNew;
+            this.IsNew = isNew; // if new, slither doesnt move segment until next slither
         }
 
         public int X { get; set; }

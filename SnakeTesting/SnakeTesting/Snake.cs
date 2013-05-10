@@ -78,7 +78,7 @@ namespace SnakeTesting
             }
         }
 
-        public void AddSegment()
+        public void GrowSegment()
         {
             int numSegments = segments.Count;
             int leaderX = segments[numSegments - 1].X;
@@ -87,8 +87,7 @@ namespace SnakeTesting
             // add segment to list
             // give it same location as butt
             segments.Add(new SnakeSegment(leaderX, leaderY));
-            // don't move it on next slither
-            // TODO
+            // don't move it on next slither (implemented in slither method)
             System.Windows.Forms.MessageBox.Show(segments.Count.ToString());
         }
 
