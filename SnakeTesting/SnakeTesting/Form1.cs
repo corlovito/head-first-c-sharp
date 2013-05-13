@@ -18,6 +18,7 @@ namespace SnakeTesting
         {
             InitializeComponent();
             freddie = new Snake();
+          
                         
         }
 
@@ -29,7 +30,7 @@ namespace SnakeTesting
 
         private void buttonAddSegment_Click(object sender, EventArgs e)
         {
-            freddie.AddSegment();
+            freddie.GrowSegment();
         }
 
 

@@ -27,40 +27,6 @@ namespace SnakeTesting
 
         public Utility.Movements Direction { get; set; }
 
-        //public void Move(Utility.Movements direction)
-        //{
-        //    if (leaderExists)
-        //    {
-        //        x = leaderX;
-        //        y = leaderY;
-        //        System.Windows.Forms.MessageBox.Show("follower " + x + ", " + y);
-        //    }
-        //    else // This segment is the head, go where user instructed
-        //    {
-        //        switch (direction)
-        //        {
-        //            // TODO: boundary checks
-        //            case Utility.Movements.up:
-        //                y -= 1;
-        //                break;
-        //            case Utility.Movements.down:
-        //                y += 1;
-        //                break;
-        //            case Utility.Movements.left:
-        //                x -= 1;
-        //                break;
-        //            case Utility.Movements.right:
-        //                x += 1;
-        //                break;
-        //            case Utility.Movements.same:
-        //                break;
-        //            default:
-        //                break;
-        //        }
-        //        System.Windows.Forms.MessageBox.Show("leader " + x + ", " + y);
-        //    }
-        //}
-
         public void AnnounceLocation()
         {
             System.Windows.Forms.MessageBox.Show("x = " + X + "\ny =" + Y + "\nIsHead: " + IsHead.ToString());

@@ -41,23 +41,31 @@ namespace SnakeTesting
                         {
                             case Utility.Movements.up:
                                 // TODO: boundary check
+                                Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.empty);
                                 segments[i].X = segments[i].X;
                                 segments[i].Y += 1;
+                                Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.snake);
                                 break;
                             case Utility.Movements.down:
                                 // TODO: boundary check
+                                Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.empty);
                                 segments[i].X = segments[i].X;
                                 segments[i].Y -= 1;
+                                Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.snake);
                                 break;
                             case Utility.Movements.left:
                                 // TODO: boundary check
+                                Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.empty);
                                 segments[i].X -= 1;
                                 segments[i].Y = segments[i].Y;
+                                Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.snake);
                                 break;
                             case Utility.Movements.right:
                                 // TODO: boundary check
+                                Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.empty);
                                 segments[i].X += 1;
                                 segments[i].Y = segments[i].Y;
+                                Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.snake);
                                 break;
                             default:
                                 break;
@@ -65,12 +73,14 @@ namespace SnakeTesting
                     }
                     else // not head
                     { // move to same spot as leading segment 
+                        Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.empty);
                         segments[i].X = segments[i - 1].X;
                         segments[i].Y = segments[i - 1].Y;
+                        Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.snake);
                     }
 
                 }
-                else
+                else // was new so it didn't move - mark it not new for next time
                 {
                     segments[i].IsNew = false;
                 }
