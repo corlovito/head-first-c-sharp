@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BeehiveSimulatorCh6
+namespace BeehiveSimulatorCh6_Part2
 {
     public partial class Form1 : Form
     {
