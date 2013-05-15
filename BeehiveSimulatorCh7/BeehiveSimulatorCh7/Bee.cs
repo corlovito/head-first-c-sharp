@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BeehiveSimulatorCh6_Part2
+namespace BeehiveSimulatorCh7
 {
     class Bee
     {
