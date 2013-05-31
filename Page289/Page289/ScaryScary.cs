@@ -8,19 +8,20 @@ namespace Page289
 {
     class ScaryScary : FunnyFunny, IScaryClown
     {
-        public ScaryScary(string funnyThingIHave, int numberOfScaryThings) : base(funnyThingIHave)
+        public ScaryScary(string funnyThingIHave, Int64 numberOfScaryThings) : base(funnyThingIHave)
         {
             this.numberOfScaryThings = numberOfScaryThings;
         }
 
-        private int numberOfScaryThings;
+        private Int64 numberOfScaryThings;
 
         
         public string ScaryThingIHave { get { return "I have " + numberOfScaryThings + " spiders"; } }
 
         public void ScareLittleChildren()
         {
-            System.Windows.Forms.MessageBox.Show("Boo! Gotcha!");
+            System.Windows.Forms.MessageBox.Show("I'm going to kill you with my " + base.FunnyThingIHave);
+            
         }
 
     }

@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="FunnyFunny.cs" />
     <Compile Include="IClown.cs" />
+    <Compile Include="IInterfaceTest.cs" />
     <Compile Include="IScaryClown.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

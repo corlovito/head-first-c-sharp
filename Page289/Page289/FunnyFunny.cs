@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Page289
 {
-    class FunnyFunny : IClown   
+    internal class FunnyFunny : IClown   
     {
         public FunnyFunny(string FunnyThingIHave)
         {
-            this._FunnyThingIHave = FunnyThingIHave;
+            this._funnyThingIHave = FunnyThingIHave;
         }
 
-        private string _FunnyThingIHave;
-        public string FunnyThingIHave { get { return _FunnyThingIHave; } }
+        private string _funnyThingIHave;
+        public string FunnyThingIHave { get { return _funnyThingIHave; } }
 
         public void Honk()
         {
-            System.Windows.Forms.MessageBox.Show("Honk Honk! I have a " + FunnyThingIHave);
+            System.Windows.Forms.MessageBox.Show("Honk Honk! I have " + FunnyThingIHave);
         }
 
     }

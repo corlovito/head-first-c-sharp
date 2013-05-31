@@ -19,11 +19,19 @@ namespace Page289
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ScaryScary fingersTheClown = new ScaryScary("big shoes", 14);
-            FunnyFunny someFunnyClown = fingersTheClown;
-            IScaryClown someOtherScaryClown = someFunnyClown as ScaryScary;
-            someOtherScaryClown.Honk();
+            IScaryClown fingersTheClown = new ScaryScary("rubber chicken", 3);
 
+            //ScaryScary fingersTheClown = new ScaryScary("big shoes", 14);
+            //FunnyFunny someFunnyClown = fingersTheClown;
+            //IScaryClown someOtherScaryClown = someFunnyClown as ScaryScary;
+            //someOtherScaryClown.Honk();
+
+            fingersTheClown.Honk();
+
+            fingersTheClown.ScareLittleChildren();
+
+            int k;
+            k = int.MaxValue;
             
         }
     }
