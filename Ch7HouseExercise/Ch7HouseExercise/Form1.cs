@@ -72,7 +72,8 @@ namespace Ch7HouseExercise
 
         private void buttonGoThroughDoor_Click(object sender, EventArgs e)
         {
-
+            IHasExteriorDoor hasDoorLocation = currentLocation as IHasExteriorDoor;
+            moveToANewLocation(hasDoorLocation.DoorLocation);   
         }
 
     }
