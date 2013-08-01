@@ -27,10 +27,11 @@ namespace SnakeTesting
 
         public Utility.Movements Direction { get; set; }
 
-        public void AnnounceLocation()
-        {
-            System.Windows.Forms.MessageBox.Show("x = " + X + "\ny =" + Y + "\nIsHead: " + IsHead.ToString());
-        }
+        //public void AnnounceLocation()
+        //{
+        //    System.Windows.Forms.MessageBox.Show("x = " + X + "\ny =" + Y + "\nIsHead: " + IsHead.ToString());
+            
+        //}
 
     }
 }

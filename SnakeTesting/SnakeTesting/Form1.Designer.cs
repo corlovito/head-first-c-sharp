@@ -30,11 +30,13 @@
         {
             this.buttonMoveRight = new System.Windows.Forms.Button();
             this.buttonAddSegment = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonDown = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonMoveRight
             // 
-            this.buttonMoveRight.Location = new System.Drawing.Point(178, 190);
+            this.buttonMoveRight.Location = new System.Drawing.Point(233, 227);
             this.buttonMoveRight.Name = "buttonMoveRight";
             this.buttonMoveRight.Size = new System.Drawing.Size(39, 23);
             this.buttonMoveRight.TabIndex = 0;
@@ -44,7 +46,7 @@
             // 
             // buttonAddSegment
             // 
-            this.buttonAddSegment.Location = new System.Drawing.Point(44, 78);
+            this.buttonAddSegment.Location = new System.Drawing.Point(12, 227);
             this.buttonAddSegment.Name = "buttonAddSegment";
             this.buttonAddSegment.Size = new System.Drawing.Size(75, 23);
             this.buttonAddSegment.TabIndex = 1;
@@ -52,16 +54,37 @@
             this.buttonAddSegment.UseVisualStyleBackColor = true;
             this.buttonAddSegment.Click += new System.EventHandler(this.buttonAddSegment_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(260, 157);
+            this.textBox1.TabIndex = 2;
+            // 
+            // buttonDown
+            // 
+            this.buttonDown.Location = new System.Drawing.Point(188, 227);
+            this.buttonDown.Name = "buttonDown";
+            this.buttonDown.Size = new System.Drawing.Size(39, 23);
+            this.buttonDown.TabIndex = 3;
+            this.buttonDown.Text = "v";
+            this.buttonDown.UseVisualStyleBackColor = true;
+            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(287, 262);
+            this.Controls.Add(this.buttonDown);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonAddSegment);
             this.Controls.Add(this.buttonMoveRight);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -69,6 +92,8 @@
 
         private System.Windows.Forms.Button buttonMoveRight;
         private System.Windows.Forms.Button buttonAddSegment;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonDown;
     }
 }
 

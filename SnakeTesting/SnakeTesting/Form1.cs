@@ -26,11 +26,23 @@ namespace SnakeTesting
         {
             Utility.Movements direction = Utility.Movements.right;
             freddie.Slither(direction);
+
+            textBox1.Text = freddie.GetLocations();
         }
 
         private void buttonAddSegment_Click(object sender, EventArgs e)
         {
             freddie.GrowSegment();
+        }
+
+        private void buttonDown_Click(object sender, EventArgs e)
+        {
+            Utility.Movements direction = Utility.Movements.down;
+            freddie.Slither(direction);
+
+            textBox1.Text = freddie.GetLocations();
+
+           
         }
 
 

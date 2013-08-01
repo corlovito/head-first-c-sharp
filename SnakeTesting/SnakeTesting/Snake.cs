@@ -28,7 +28,7 @@ namespace SnakeTesting
             {
                 if (!segments[i].IsNew) // move it if not new
                 {
-                    segments[i].AnnounceLocation();
+                    //segments[i].AnnounceLocation();
                     if (segments[i].IsHead)
                     {
                         if (direction == Utility.Movements.same)
@@ -43,14 +43,14 @@ namespace SnakeTesting
                                 // TODO: boundary check
                                 Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.empty);
                                 segments[i].X = segments[i].X;
-                                segments[i].Y += 1;
+                                segments[i].Y -= 1;
                                 Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.snake);
                                 break;
                             case Utility.Movements.down:
                                 // TODO: boundary check
                                 Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.empty);
                                 segments[i].X = segments[i].X;
-                                segments[i].Y -= 1;
+                                segments[i].Y += 1;
                                 Board.SetPositionStatus(segments[i].X, segments[i].Y, Board.PositionStates.snake);
                                 break;
                             case Utility.Movements.left:
@@ -98,9 +98,22 @@ namespace SnakeTesting
             // give it same location as butt
             segments.Add(new SnakeSegment(leaderX, leaderY));
             // don't move it on next slither (implemented in slither method)
-            System.Windows.Forms.MessageBox.Show(segments.Count.ToString());
+            //System.Windows.Forms.MessageBox.Show(segments.Count.ToString());
         }
 
+        public string GetLocations() // TODO: this will eventually need to return usable values so that the snake can be drawn. Right now it just returns a string to be shown in a textbox.
+        {
+            
+            int snakelength = segments.Count;
+            string locations = "";
+            for (int i = snakelength - 1; i >= 0; i--)
+            {
+                locations += "x = " + segments[i].X + " y = " + segments[i].Y + " IsHead = " + segments[i].IsHead.ToString() + "\r\n";
+
+
+            }
+            return locations;
+        }
         
     }
 }
