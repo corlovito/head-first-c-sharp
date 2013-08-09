@@ -18,7 +18,17 @@ namespace SnakeTesting
         {
             InitializeComponent();
             freddie = new Snake();
-          
+
+            while (true)    // Game Loop
+            {
+                //TODO: check time
+                
+                getUserInput();
+                doSnakeStuff();
+                drawBoard();
+
+                //TODO: wait X ms - time lapsed
+            }
                         
         }
 
@@ -44,6 +54,26 @@ namespace SnakeTesting
 
            
         }
+
+
+        private void getUserInput() 
+        { 
+            // get user input if any
+            // set freddie.UserGivenDirection if input given
+        }
+       
+        private void doSnakeStuff() 
+        {
+            // slither
+            // 
+        }
+        private void drawBoard() 
+        {
+            // freddie.GetLocations()
+            // draw board
+        }
+
+
 
 
     }
