@@ -21,7 +21,7 @@ namespace SnakeTesting
             segments.Add(new SnakeSegment(0, 0, false, false));
         }
         
-        public void Slither(Utility.Movements direction = Utility.Movements.same)
+        public void Slither(Utility.Movements direction = Utility.Movements.same)                       // TODO: ! Should I return false if snake dies?
         {
             int snakeLength = segments.Count;
             for (int i = snakeLength - 1; i >= 0; i--) // Move each segment starting at END OF TAIL
@@ -29,15 +29,15 @@ namespace SnakeTesting
                 if (!segments[i].IsNew) // move it if not new
                 {
                     //segments[i].AnnounceLocation();
-                    if (segments[i].IsHead)
-                    {
+                    if (segments[i].IsHead)                                                         // TODO: grow snake when it eats, return false if it dies / true if all is normal
+                    {                                                                               //       if snake eats then generate new piece of fruit
                         if (direction == Utility.Movements.same)
                             direction = this.UserGivenDirection; // use previous direction
 
                         this.UserGivenDirection = direction; // store new direction
 
                         // TODO: Do move
-                        switch (direction)
+                        switch (direction)                                                              
                         {
                             case Utility.Movements.up:
                                 // TODO: boundary check
