@@ -20,7 +20,28 @@ namespace DuckList
                 new Duck() { Kind = KindOfDuck.Decoy, Size = 13 },
             };
 
+            //ducks.Sort();
+
+            DuckComparerBySize compareBySize = new DuckComparerBySize();
+            DuckComparerByKind compareByKind = new DuckComparerByKind();
+
+            ducks.Sort(compareBySize);
+            Console.WriteLine("Sort by size:");
+            PrintDucks(ducks);
+
+            ducks.Sort(compareByKind);
+            Console.WriteLine("Sort by kind:");
+            PrintDucks(ducks);
+
             Console.ReadKey();
         }
+
+        public static void PrintDucks(List<Duck> ducks)
+        {
+            foreach (Duck duck in ducks)
+                Console.WriteLine(duck.Size.ToString() + "-inch " + duck.Kind.ToString());
+            Console.WriteLine("End of ducks.\n");
+        }
+
     }
 }

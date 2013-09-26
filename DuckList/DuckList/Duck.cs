@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace DuckList
 {
-    class Duck
+    class Duck : IComparable<Duck>
     {
         public int Size;
         public KindOfDuck Kind;
+
+        public int CompareTo(Duck other)
+        {
+            if (this.Size > other.Size)
+                return 1;
+            else if (this.Size < other.Size)
+                return -1;
+            else
+                return 0;
+        }
     }
 
     enum KindOfDuck
