@@ -13,33 +13,33 @@ namespace CardSorting
             Random random = new Random();
 
             List<Card> deck = new List<Card>();
-            Card firstCard = new Card((Suit)random.Next(4), (Value)random.Next(1, 13));
-            deck.Add(firstCard);
 
-            for (int i = 0; i < 52; i++)
+            CardComparer_byValue cardComparer = new CardComparer_byValue();
+
+            while (deck.Count() < 52)
             {
-                Card card;
-                do
+                Card card = new Card((Suit)random.Next(4), (Value)random.Next(1, 14));
+
+                bool inDeck = false;
+                foreach (Card c in deck)
                 {
-                    card = new Card((Suit)random.Next(4), (Value)random.Next(1, 13));
-                } while (true);
-     
-                
+                    if (c.name == card.name)
+                    {
+                        inDeck = true;
+                        break;
+                    }
+                }
 
-                if (deck[i].suit == card.suit && deck[i].value == card.value) // make each card unique
-                    i--;
-                else
+                if (!inDeck)
                     deck.Add(card);
-
             }
 
-          
+            deck.Sort();
 
             foreach (Card card in deck)
                 Console.WriteLine(card.name);
 
             Console.ReadKey();
-
         }
     }
 }

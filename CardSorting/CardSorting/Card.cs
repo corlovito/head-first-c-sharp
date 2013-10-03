@@ -32,7 +32,7 @@ namespace CardSorting
         King = 13
     }
 
-    class Card
+    class Card : IComparable<Card>
     {
         public Suit suit;
         public Value value;
@@ -54,8 +54,16 @@ namespace CardSorting
             }
         }
 
-
-
+        public int CompareTo(Card cardToCompare)
+        {
+            if (this.value > cardToCompare.value)
+                return 1;
+            else if (this.value < cardToCompare.value)
+                return -1;
+            else
+                return 0;
+               
+        }
 
     }
 }
